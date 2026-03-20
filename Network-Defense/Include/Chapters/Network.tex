@@ -64,3 +64,31 @@ there are classes of IP addresses:
 \end{itemize}
 
 There are routable and non routable IP addresses. The routable have to be unique on the internet, whike non routable can exist in different network but can not be used on internet.
+
+\section{Layering}
+the comunication between hosts in the network is organized in task assigned to a layer. Each layer offers a service to the layer above and uses the services of the layer below.
+the data is trasfered from the application level to application level over a network. Each layer adds protocol information and data to the layer below. The physical layer send the data physically to the destination. In the destination, the phisical layer sends the data up the stack. Each protocol reads the appropriate protocol information ad forward the data to the layer above.
+
+There are 2 main layering models:
+\begin{itemize}
+    \item ISO/OSI model: 7 layers (Physical, Data Link, Network, Transport, Session, Presentation, Application)
+    \item TCP/IP model: 4 layers (Link, Internet, Transport, Application)
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Include/Chapters/isosi.PNG}
+        \caption{Models}\label{fig:img1}
+    \end{minipage}
+\end{figure}
+
+\subsection{TCP/IP model}
+\begin{itemize}
+    \item application layer: Corresponds to the top three layers of the OSI model.(Protocols: SMTP (sending e-mail), HTTP (web), FTP (file transfer), and others). Address: internet name (e.g., www.google.com) 
+    \item Transport layer: Equivalent to Layer 4 (Transport) of the OSI model.(Protocols: TCP, UDP). Address: port number (e.g., 80 for HTTP)
+    \item Internet: Equivalent to layer 3 (network) of the OSI model.(Protocols: IP, ICMP, IPSec). Address: IP address (e.g., 192.168.1.1)
+    \item Datalink: Equivalent to layer 2 (data link) of the OSI model.(Protocols: Ethernet, WiFi, ARP, etc.). Address: MAC address (e.g., 00:0a:95:9d:68:16)
+    \item Physical layer: Equivalent to Layer 1 (Physical) of the OSI model.
+\end{itemize}
